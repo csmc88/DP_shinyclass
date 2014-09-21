@@ -1,0 +1,94 @@
+---
+title: "App Documentation"
+output: html_document
+--- 
+
+This is a short introduction to the Shiny App prepared for the Data Products Coursera Class in the Data Science Specialization. You can see this as a product that could be used in a class for interactive teaching/learning.
+
+## Objective
+
+The purpose of the application is to point troubles that might arise in a linear modeling scenario when considering the INTERCEPTS over X or Y. This is part of what happens when using the model to extrapolate values on the covariates. 
+
+I chose a linear model that would allow me to explore the following scenarios:
+
+* Negative Value, Positive Prediction (Obvious case of Lower Interpolation) 
+* Positive Value, Positive Prediction (Interpolation can be a problem under certain cirumstances)
+* Negative Value Prediction (Obvious case of Upper Interpolation) 
+
+
+## Linear Model Computation
+
+This is the summary for the model used.
+
+```{r Model Computation}
+data(mtcars)
+model <- lm(mpg ~ wt, mtcars)
+summary(model)
+```
+
+The model is computed as the interface loads and saved in the `model` object.
+
+## Input Section
+
+Through a slider widget the user can provide the weight value of a car. The units are total lbs. The server handles the conversion to (lbs/1000) which are the units for weight in mtcars.
+
+The slider limits have been adapted to include showcase scenarios. The lower limit is a negative car weight; meanwhile the upper limit causes the linear prediction to turn a negative result.
+
+
+## Output Section
+
+The output of this application consists of 4 parts. Each part is affected differently by the three scenarios described. It might be a funny interpretation, additional information or a comment regarding the issue.
+
+### Input Received
+
+Confirms the weight value input received by the server in lbs. On extreme scenarios a remark is made of the received data interpretation.
+
+### Plot of Studied Data
+
+The data points studied are plotted with base R plotting tools. This helps the user see the location of their estimation, data points used, regression line and possible limits. The plot uses color coded lines and points.
+
+* Blue points are the observed cars; they're located in their correspondent (weight, mpg) coordinates. 
+* Green line is the fitted linear model line using OLS regression. 
+* Red cross points to the exact location of the predicted value in the regression line.
+
+If an intercept was reached, either in the X or Y axis, the axis limits are changed and a black line is added to the final plot. 
+
+* A vertical black line helps to identify the weight 0 intercept
+* A horizontal black line helps to identify where the predicted value becomes 0.
+
+```{r Example Plot, echo = FALSE}
+  weight <- 3.2
+
+  # Modification of Plot Limits
+  lowerX <- -0.1
+  higherX <- 7.1
+  
+  answer <- predict(model,data.frame(wt = weight))
+  lowerY <- -5
+  higherY <- 40
+  
+  # Plotting Elements
+  plot(mpg ~ wt, mtcars,
+       col = 'blue', pch = 16, lwd = 3,
+       xlim = c(lowerX,higherX), ylim = c(lowerY,higherY),
+       xlab = 'Weight (lbs/1000)', ylab = 'MPG', main = 'Miles per Gallon ~ Weight')
+  abline(model, col = 'green', lwd = 5)
+  points(x = weight, y = answer, lwd = 5, col = 'red', pch = 3)
+  legend('topright', c('Studied Cars','Linear Model','Your Car'), pch = 16, col = c('blue','green','red'))
+  
+  # Impossible Physical Scenarios
+  abline(v = 0, col = 'black', lwd = 2)
+  abline(h = 0, col = 'black', lwd = 2)
+  legend('bottomleft', 'Linear Model Limits', lty = 1, col = 'black', lwd = 3)
+```
+
+Although the shown plot has both lines, it is impossible given the app structure that both lines will appear together when using the app. This plot is only for documentation purposes.
+
+
+### Expected MPG
+
+The predicted value is printed. If a critical scenario was consulted then an additional comment will be inserted pointing to the observed fault in the model.
+
+### Conclusion for Class
+
+The conclusion gives some insight as to what to do or avoid when using linear models. The conclusion should help the student understand interpolation issues. It changes depending on the scenario.

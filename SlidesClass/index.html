@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Class Apps</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Interactive Class Apps">
+  <meta name="author" content="Imaginary Products">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Interactive Class Apps</h1>
+    <h2>Guided Experiment Learning</h2>
+    <p>Imaginary Products<br/>Next Step in Education</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Learning Data Science</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Science is how we attempt to understand and manipulate the world around us. There is always data, relations, questions, algorithms and insight. Take for example a set of cars.</p>
+
+<p><img src="assets/fig/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+<p>You can see how the car weight influences it&#39;s miles per gallon performance. Data analysis can help you understand further! <strong>But first you must learn theory and practice!</strong></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Learning Experience MATTERS!</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Consider a class on linear models</p>
+
+<p>\[\Large Y = \sum_{i=1}^{n}{\beta_iX_i}\]</p>
+
+<p>They are very interesting, but the learning experience depends on the resources available to the student, the professor or mentor and the learning traits.</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <h3>Offline Class</h3>
+
+<ul>
+<li>Face to face with professor and peers</li>
+<li>Questions solved on the spot</li>
+<li>Lots of <strong>Guided Manual Exercises</strong></li>
+<li><strong>Immediate feedback</strong></li>
+<li>Student mistakes are corrected immediatly</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>Online Class</h3>
+
+<ul>
+<li>Massive <strong>online resources</strong></li>
+<li>Flexible class schedules (learn at your pace)</li>
+<li>Student is <strong>free to explore</strong></li>
+<li>Feedback has a delay</li>
+<li>Errors or mispractice is not identified quickly</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Our Idea Pitch</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Inspired by resources like <code>manipulate</code> and <code>swirl</code> R packages and <a href="http://www.w3schools.com/">W3Schools</a>, we at IP believe that under a controlled scenario a student can learn in an app that merges exercises with scenario exploration, explanations and data interpretation.</p>
+
+<p>Take a moment to visit our <a href="https://csmc88.shinyapps.io/shinyClass">first webapp</a>. It is both a class and a guided exercise on the topic of extrapolating with linear models. </p>
+
+<pre><code class="r">data(mtcars)
+fit &lt;- lm(mpg ~ wt, mtcars)
+summary(fit)$coefficients
+</code></pre>
+
+<pre><code>##             Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)   37.285     1.8776  19.858 8.242e-19
+## wt            -5.344     0.5591  -9.559 1.294e-10
+</code></pre>
+
+<p>Simple OLS is easy to understand, but it is far more educative to study it by playing with data and a mentor close by.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Think of the possibilities</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="quiz quiz-multiple well" data-individual>
+  <p>Our first app might seem a little raw and incomplete. But the <em>IDEA</em> can be taken further as an additional resource for online courses or a class all in itself. </p>
+
+<p>With additional work, the app can even teach R programming! Through interactive plots and controlled R code these <strong>online guided experiments</strong> can help a student learn the development and modeling concepts of data science.</p>
+
+<h3>What do you think?</h3>
+
+<ol>
+<li><em>I want to give feedback on this</em></li>
+<li><em>New teaching resources are always welcome</em></li>
+<li><em>This should be done carefully</em></li>
+<li>This won&#39;t work</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>Don&#39;t be negative, try new things and fail quickly to learn faster. </p>
+
+</div>
+<div class="quiz-explanation">
+  <p>Thank you! We believe in open ideas developed with care and teamwork!.  </p>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Learning Data Science'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Learning Experience MATTERS!'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Our Idea Pitch'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Think of the possibilities'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
